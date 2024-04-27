@@ -3,12 +3,11 @@ from collections import UserDict
 from datetime import datetime, timedelta
 from flask import Flask
 
-
 app = Flask(__name__)
+
 
 class Field:
     def __init__(self, value):
-
         self.value = value
 
     def __str__(self):
@@ -180,7 +179,6 @@ def load_data():
         return AddressBook()
 
 
-
 @input_error
 def add_contact(args, book: AddressBook):
     name, phone, *_ = args
@@ -329,4 +327,4 @@ def main():
 
 
 if __name__ == "__main__":
-  app.run()
+    app.run(host='0.0.0.0', port=5000)

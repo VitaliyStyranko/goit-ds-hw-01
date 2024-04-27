@@ -13,10 +13,11 @@ RUN pip install poetry
 # Install dependencies using Poetry
 RUN poetry config virtualenvs.create false && poetry install --only main
 
+#COPY personal_assistant.py /app/
 COPY . /app
 
 # Make port 3000 available to the world outside this container
-EXPOSE 3000
+EXPOSE 5000
 
 # Run app.py when the container launches
 CMD ["python", "personal_assistant.py"]
